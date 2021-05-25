@@ -23,8 +23,8 @@ namespace UnitTestJsonComparer
         {
             string input = txtInput.Text;
 
-            if (input.IndexOf("Expected:<{") == -1
-                || input.IndexOf("Actual:<{") == -1)
+            if (input.IndexOf("Expected:<") == -1
+                || input.IndexOf("Actual:<") == -1)
             {
                 txtInput.Text =
                     txtActual.Text =
@@ -45,8 +45,23 @@ namespace UnitTestJsonComparer
                 var expected = match.Groups[1].Value;
                 var actual = match.Groups[2].Value;
 
-                txtExpected.Text = JToken.Parse(expected).ToString(Formatting.Indented);
-                txtActual.Text = JToken.Parse(actual).ToString(Formatting.Indented);
+                try
+                {
+                    txtExpected.Text = JToken.Parse(expected).ToString(Formatting.Indented);
+                } 
+                catch
+                {
+                    txtExpected.Text = expected;
+                }
+
+                try
+                {
+                    txtActual.Text = JToken.Parse(actual).ToString(Formatting.Indented);
+                }
+                catch
+                {
+                    txtActual.Text = actual;
+                }
             }
         }
     }
