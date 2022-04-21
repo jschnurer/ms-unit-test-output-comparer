@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblInput = new System.Windows.Forms.Label();
             this.txtInput = new System.Windows.Forms.TextBox();
             this.lblExpected = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtExpected = new UnitTestJsonComparer.SyncTextBox();
             this.txtActual = new UnitTestJsonComparer.SyncTextBox();
+            this.lblAssertionMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -72,7 +74,8 @@
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(0, 35);
+            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 68);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -82,7 +85,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.txtActual);
-            this.splitContainer1.Size = new System.Drawing.Size(789, 486);
+            this.splitContainer1.Size = new System.Drawing.Size(789, 453);
             this.splitContainer1.SplitterDistance = 390;
             this.splitContainer1.TabIndex = 4;
             this.splitContainer1.Text = "splitContainer1";
@@ -96,7 +99,7 @@
             this.txtExpected.Multiline = true;
             this.txtExpected.Name = "txtExpected";
             this.txtExpected.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtExpected.Size = new System.Drawing.Size(390, 486);
+            this.txtExpected.Size = new System.Drawing.Size(390, 453);
             this.txtExpected.TabIndex = 0;
             // 
             // txtActual
@@ -108,18 +111,27 @@
             this.txtActual.Multiline = true;
             this.txtActual.Name = "txtActual";
             this.txtActual.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtActual.Size = new System.Drawing.Size(395, 486);
+            this.txtActual.Size = new System.Drawing.Size(395, 453);
             this.txtActual.TabIndex = 0;
+            // 
+            // lblAssertionMessage
+            // 
+            this.lblAssertionMessage.Location = new System.Drawing.Point(12, 32);
+            this.lblAssertionMessage.Name = "lblAssertionMessage";
+            this.lblAssertionMessage.Size = new System.Drawing.Size(765, 33);
+            this.lblAssertionMessage.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 521);
+            this.Controls.Add(this.lblAssertionMessage);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.lblExpected);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.lblInput);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Unit Test Output Comparer";
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -141,6 +153,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private SyncTextBox txtActual;
         private SyncTextBox txtExpected;
+        private System.Windows.Forms.Label lblAssertionMessage;
     }
 }
 
