@@ -23,8 +23,8 @@ namespace UnitTestJsonComparer
         {
             string input = txtInput.Text;
 
-            if (input.IndexOf("Expected:<{") == -1
-                || input.IndexOf("Actual:<{") == -1)
+            if (input.IndexOf("Expected:<") == -1
+                || input.IndexOf("Actual:<") == -1)
             {
                 txtInput.Text =
                     txtActual.Text =
